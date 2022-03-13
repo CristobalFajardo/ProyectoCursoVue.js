@@ -1,9 +1,9 @@
 # Proyecto final de curso Vue.js
 
-Programa del curso de Vue Js
+Proyecto del curso de Vue Js
 https://www.coderhouse.cl/online/vue-js
 
-## What is Contentful?
+## Que contiene este proyecto?
 
 Programa del curso de Vue Js
 
