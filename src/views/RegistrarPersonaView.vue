@@ -1,5 +1,15 @@
 <template>
   <v-form ref="form" v-model="valid" lazy-validation>
+
+<v-text-field
+      v-model="name"
+      :counter="10"
+      :rules="nameRules"
+      label="Nombre"
+      required
+    ></v-text-field>
+
+
     <v-text-field
       v-model="email"
       :rules="emailRules"
@@ -32,13 +42,18 @@
 
 <script>
 export default {
-  name: "LoginPersona",
+  name: "Registrar-Persona",
   data: () => ({
     valid: true,
+     name: '',
+      nameRules: [
+        v => !!v || 'Nombre es requerido.',
+        v => (v && v.length <= 50) || 'Longitud de nombre: como maximo 50 caracteres.',
+      ],
     show1: false,
     password: "",
     rules: {
-      required: (value) => !!value || "Pasword requerido.",
+      required: (value) => !!value || "Password requerido.",
       min: (v) => v.length >= 8 || "Longitud de contraseña: como mínimo 8 caracteres."      
     },
     email: "",
@@ -61,3 +76,5 @@ export default {
   },
 };
 </script>
+
+

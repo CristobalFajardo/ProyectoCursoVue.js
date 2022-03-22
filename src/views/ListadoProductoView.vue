@@ -40,6 +40,7 @@
 
 <script>
 export default {
+    name: "Listado-Producto",
   data: () => ({
     dialog: false,
   search: '',

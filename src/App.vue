@@ -1,138 +1,55 @@
-
-
 <template>
- 
+  <!-- App.vue -->
+
   <v-app>
+    <v-navigation-drawer app>
+      <!-- -->
+      <router-link to="/"
+        ><v-btn color="primary" elevation="2" outlined plain raised>
+          Go to Home</v-btn
+        ></router-link> <br>
 
- <v-navigation-drawer 
-   app 
-   right  
-   width="500"     
-  >
-      <CarritoCompras/>
-  </v-navigation-drawer>
- 
-  <v-app-bar 
-  class="d-flex justify-end mb-6"
-  app>
-    <!-- -->
-  <div>
-    <v-dialog
-      v-model="dialog"
-      width="500"
-    >
-      <template v-slot:activator="{ on, attrs }">
-        
-        <v-btn
-          color="primary"
-          dark
-          v-bind="attrs"
-          v-on="on"
-        >
-          Registrar
-        </v-btn>
-      </template>
+      <router-link to="/Carrito-Compras"
+        ><v-btn color="primary" elevation="2" outlined plain raised
+          >Carrito de compras</v-btn
+        ></router-link><br>
+      <router-link to="/Listado-Producto"
+        ><v-btn color="primary" elevation="2" outlined plain raised
+          >Listado de productos</v-btn
+        ></router-link> <br>     
+      <router-link to="/Login-Persona"
+        ><v-btn color="success" elevation="2" outlined plain raised>
+          Login</v-btn
+        ></router-link><br>
+      <router-link to="/Registrar-Persona"
+        ><v-btn color="success" elevation="2" outlined plain raised>
+          Registrar</v-btn
+        ></router-link
+      >
+    </v-navigation-drawer>
 
-      <v-card>
-        <v-card-title class="text-h5 grey lighten-2">
-          Registrar
-        </v-card-title>
+    <v-app-bar app>
+      <!-- -->
+    </v-app-bar>
 
-        <v-card-text>
-          <RegistrarPersona/>
-        </v-card-text>
+    <!-- Sizes your content based upon application components -->
+    <v-main>
+      <!-- Provides the application the proper gutter -->
+      <v-container fluid>
+        <!-- If using vue-router -->
+        <router-view></router-view>
+      </v-container>
+    </v-main>
 
-        <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="primary"
-            text
-            @click="dialog = false"
-          >
-          
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog> <v-dialog
-      v-model="dialog"
-      width="500"
-    >
-      <template v-slot:activator="{ on, attrs }">
-        
-        <v-btn
-          color="primary"
-          dark
-          v-bind="attrs"
-          v-on="on"
-        >
-          Login
-        </v-btn>
-      </template>
-
-      <v-card>
-        <v-card-title class="text-h5 grey lighten-2">
-          Iniciar sesión
-        </v-card-title>
-
-        <v-card-text>
-          <LoginPersona/>
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn
-            color="primary"
-            text
-            @click="dialog = false"
-          >
-          
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-  </div>
-  </v-app-bar>
-
-  <!-- Sizes your content based upon application components -->
-  <v-main>
-
-    <!-- Provides the application the proper gutter -->
-    <v-container fluid>
- 
- <ListadoProducto/>
-
- 
-      <router-view></router-view>
-    </v-container>
-  </v-main>
-
-  <v-footer app>
-    <!-- -->
-  </v-footer>
-</v-app>
+    <v-footer app>
+      <!-- -->
+    </v-footer>
+  </v-app>
 </template>
 
 <script>
-
-import LoginPersona from './components/LoginPersona';
-import RegistrarPersona from './components/RegistrarPersona';
-import ListadoProducto from './components/ListadoProducto';
-import CarritoCompras from './components/CarritoCompras';
-
 export default {
-  name: 'App',
-
-  components: {
-    CarritoCompras,
-    LoginPersona,
-    RegistrarPersona,
-    ListadoProducto,
-
-  },
+  name: "App",
 
   data: () => ({
     //
