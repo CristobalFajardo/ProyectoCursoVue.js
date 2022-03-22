@@ -90,6 +90,7 @@ export default {
     validate() {
       this.$refs.form.validate();
 
+
       let vue = this;
       axios
         .get("https://6237ccdbb08c39a3af82e1f7.mockapi.io/api/v1/users")
